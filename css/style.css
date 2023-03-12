@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+:root {
+  font-size: calc(0.5em + 1vw);
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #f1dea8;
+  background-color: #dbd4d4;
+  line-height: 1.5;
+  font-family: 'Sono', sans-serif;
+  margin: 1.5em 0;
+}
+
+
+
+.container {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #3b3a3a;
+
+}
+
+.accordion-item {
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+input {
+  visibility: hidden;
+  display: none;
+}
+
+.accordion-title {
+  border-top: 0.025em solid #ebb69e;
+  border-bottom: 0.025em solid #ebb69e;
+  padding: 0.5em 0;
+  transition: color 0.3s ease;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+.accordion-item-content {
+    margin: 1em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5em;
+}
+
+.accordion-item:active {
+  filter: blur(0.05em);
+}
