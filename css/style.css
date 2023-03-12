@@ -1,58 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
 
 :root {
-  font-size: calc(0.5em + 1vw);
-  box-sizing: border-box;
+    font-size: calc(0.5em + 1vw);
+    box-sizing: border-box;
 }
 
 *,
 ::before,
 ::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  color: #f1dea8;
-  background-color: #dbd4d4;
-  line-height: 1.5;
-  font-family: 'Sono', sans-serif;
-  margin: 1.5em 0;
+    color: #f1dea8;
+    background-color: #dbd4d4;
+    font-family: 'Sono', sans-serif;
+    margin: 1.5em 0;
 }
 
-
-
 .container {
-  max-width: 70vw;
-  margin: 0 auto;
-  padding: 1em;
-  background-color: #3b3a3a;
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: #3b3a3a;
 
 }
 
 .accordion-item {
-  cursor: pointer;
-  transition: filter 0.3s ease;
-  display: block;
+    cursor: pointer;
+    transition: filter 0.1s ease;
+    display: block;
 }
 
 input {
-  visibility: hidden;
-  display: none;
+    visibility: hidden;
+    display: none;
 }
 
 .accordion-title {
-  border-top: 0.025em solid #ebb69e;
-  border-bottom: 0.025em solid #ebb69e;
-  padding: 0.5em 0;
-  transition: color 0.3s ease;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    border-top: 0.025em solid #ebb69e;
+    border-bottom: 0.025em solid #ebb69e;
+    padding: 0.5em 0;
+    transition: color 0.2s ease;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h3 {
-  margin: 0;
+    margin: 0;
 }
 
 .accordion-item-content {
@@ -60,11 +57,57 @@ h3 {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5em;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5em;
 }
 
-.accordion-item:active {
-  filter: blur(0.05em);
+.accordion:hover .accordion-item:hover .accordion-item-content,
+.accordion input:checked ~ .accordion-item-content {
+  max-height: 50em;
+  margin: 1.4em 0 1em 0;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.accordion:hover .accordion-item:hover .accordion-icon,
+.accordion input:checked ~ .accordion-item .accordion-icon {
+  transform: rotate(135deg);
+}
+
+.accordion:hover .accordion-icon {
+  opacity: 1;
+}
+.accordion:hover .accordion-title {
+  color: #f1dea8;
+}
+
+.accordion .accordion-title {
+  color: #e4a213;
+}
+.accordion input:checked ~ .accordion-title {
+  color: #f1dea8;
+}
+
+.accordion-item-content,
+.accordion:hover .accordion-item-content,
+.accordion input ~ .accordion-item-content {
+  max-height: 0;
+  transform: scale(0.5);
+  margin: 0;
+  opacity: 0;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.8s ease;
+}
+
+.accordion-icon {
+  margin-right: 0.3em;
+  height: 0.7em;
+  width: 0.7em;
+  border-left: 0.2em solid #f1dea8;
+  border-bottom: 0.2em solid #f1dea8;
+  transition: transform 0.3s ease, acity 0.3s ease;
+  opacity: 0;
+  transform: rotate(-45deg);
 }
